@@ -19,20 +19,21 @@ namespace serial_port_monitor
             var serial = Environment.GetEnvironmentVariable("SERIAL_PORT");
             Console.WriteLine($"Using: {serial} serial port");
 
-            var _serialPort = new SerialPort(serial, 9600);
-
-            // Set the read/write timeouts
-            _serialPort.ReadTimeout = 1500;
-            _serialPort.WriteTimeout = 1500;
-            _serialPort.Open();
-            while (true)
+            using (var _serialPort = new SerialPort(serial, 9600))
             {
-                try
+                // Set the read/write timeouts
+                _serialPort.ReadTimeout = 1500;
+                _serialPort.WriteTimeout = 1500;
+                _serialPort.Open();
+                while (true)
                 {
-                    string message = _serialPort.ReadLine();
-                    Console.WriteLine(message);
+                    try
+                    {
+                        string message = _serialPort.ReadLine();
+                        Console.WriteLine(message);
+                    }
+                    catch (TimeoutException) { }
                 }
-                catch (TimeoutException) { }
             }
         }
     }
