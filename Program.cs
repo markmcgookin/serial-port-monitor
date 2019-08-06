@@ -15,8 +15,9 @@ namespace serial_port_monitor
                 Console.WriteLine(p);
             }
 
-            var port = "/dev/tty.usbmodem146301";
+            var port = "/dev/tty.usbmodem146401";
             Console.WriteLine("Enter a Port: ");
+            
             var input = Console.ReadLine();
             if (!String.IsNullOrEmpty(input))
             {
