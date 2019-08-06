@@ -15,7 +15,8 @@ namespace serial_port_monitor
                 Console.WriteLine(p);
             }
 
-            var _serialPort = new SerialPort(args[0], 9600);
+            var serial = Environment.GetEnvironmentVariable("SERIAL_PORT");
+            var _serialPort = new SerialPort(serial, 9600);
 
             // Set the read/write timeouts
             _serialPort.ReadTimeout = 1500;
