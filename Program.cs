@@ -7,15 +7,18 @@ namespace serial_port_monitor
         static void Main(string[] args)
         {
             // Get a list of serial port names.
-            string[] ports = SerialPort.GetPortNames();
-            Console.WriteLine("The following serial ports were found:");
+            //string[] ports = SerialPort.GetPortNames();
+            //Console.WriteLine("The following serial ports were found:");
             // Display each port name to the console.
-            foreach (string p in ports)
-            {
-                Console.WriteLine(p);
-            }
+            //foreach (string p in ports)
+            //{
+            //    Console.WriteLine(p);
+            //}
+
 
             var serial = Environment.GetEnvironmentVariable("SERIAL_PORT");
+            Console.WriteLine($"Using: {serial} serial port");
+
             var _serialPort = new SerialPort(serial, 9600);
 
             // Set the read/write timeouts
