@@ -1,0 +1,2 @@
+dockerregistry.local:5000/markmcgookin/serial-port-monitor:latest
+docker run --name serial-port -e SERIAL_PORT="/dev/ttyACM0" -t -i --device=/dev/ttyACM0 dockerregistry.local:5000/markmcgookin/serial-port-monitor --entrypoint /bin/bash
