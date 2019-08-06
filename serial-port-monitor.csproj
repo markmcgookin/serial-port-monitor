@@ -2,7 +2,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.0</TargetFramework>
-    <RootNamespace>serial_port_monintor</RootNamespace>
+    <RootNamespace>serial_port_monitor</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="System.IO.Ports" Version="4.6.0-preview.19073.11"/>

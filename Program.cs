@@ -15,17 +15,7 @@ namespace serial_port_monitor
                 Console.WriteLine(p);
             }
 
-            var port = "/dev/tty.usbmodem146401";
-            Console.WriteLine("Enter a Port: ");
-            
-            var input = Console.ReadLine();
-            if (!String.IsNullOrEmpty(input))
-            {
-                port = input;
-            }
-            
-            Console.WriteLine("Using " + port);
-            var _serialPort = new SerialPort(port, 9600);
+            var _serialPort = new SerialPort(args[0], 9600);
 
             // Set the read/write timeouts
             _serialPort.ReadTimeout = 1500;
